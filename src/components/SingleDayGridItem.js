@@ -8,6 +8,10 @@ const SingleDayGridItemStyles = styled.div`
   padding: 10px;
   background: white;
   overflow-y: overlay;
+  cursor: pointer;
+  &:hover {
+    background: lightgray;
+  }
 
   @media(max-width: 1100px) {
     flex-basis: 100%;
@@ -23,7 +27,6 @@ const SingleReminderStyles = styled.div`
 
   span.close-icon {
     float:right;
-    cursor: pointer;
     padding: 0 5px 5px;
   }
   p {

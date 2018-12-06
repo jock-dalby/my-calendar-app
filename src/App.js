@@ -23,6 +23,10 @@ const GridRowStyles = styled.div`
 
 const EmptyGridItemStyles = styled(SingleDayGridItemStyles)`
   background: darkgray;
+  cursor: initial;
+  &:hover {
+    background: darkgray;
+  }
   @media(max-width: 1100px) {
     display: none;
   }
