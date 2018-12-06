@@ -54,9 +54,9 @@ class ReminderDetails extends Component {
     color: 'red'
   }
 
-  onChangeHandler = e => {
+  onChangeHandler = ({ target: { name, value }}) => {
     this.setState({
-      [e.target.name]: e.target.value
+      [name]: value
     })
   }
 

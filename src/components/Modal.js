@@ -15,8 +15,8 @@ const ModalStyles = styled.div`
   top: 30%;
   box-sizing: border-box;
   transition: all 0.3s ease-out;
-  opacity: ${props => props.show ? '1' : '0'};
-  transform: ${props => props.show ? 'translateY(0)' : 'translateY(-500vh)'};
+  opacity: ${({ show }) => show ? '1' : '0'};
+  transform: ${({ show }) => show ? 'translateY(0)' : 'translateY(-500vh)'};
   @media (min-width: 600px) {
     width: 500px;
     left: calc(50% - 250px);

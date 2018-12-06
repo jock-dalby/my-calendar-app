@@ -46,7 +46,6 @@ class SingleDayGridItem extends Component {
   }
 
   render() {
-    console.log(this.props.reminders)
     return (
       <SingleDayGridItemStyles onClick={this.onClickHandler}>
         {this.props.dayNumber}
