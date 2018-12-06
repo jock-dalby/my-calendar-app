@@ -47,7 +47,9 @@ class SingleDayGridItem extends Component {
     return (
       <SingleDayGridItemStyles onClick={this.onClickHandler}>
         {this.props.dayNumber}
-        {this.props.reminders.map(reminder => (
+        {this.props.reminders
+          .sort((a, b) => convertTimeStringToNumber(a.time) - convertTimeStringToNumber(b.time))
+          .map(reminder => (
         <SingleReminderStyles key={reminder.id} reminderColor={reminder.color}>
           <div>
             <span>{reminder.details}</span>
@@ -58,6 +60,11 @@ class SingleDayGridItem extends Component {
       </SingleDayGridItemStyles>
     )
   }
+}
+
+function convertTimeStringToNumber(timeString) {
+  const timeStringWithoutColon = timeString.replace(/:/g,'');
+  return +timeStringWithoutColon
 }
 
 export default SingleDayGridItem;
