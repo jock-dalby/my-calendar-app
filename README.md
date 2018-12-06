@@ -9,5 +9,5 @@
 - [x] Ability to delete reminders. 
 
 #### To do :
-- [ ] Ability to edit reminders: including changing text, day, time & colour. TODO!
+- [ ] Ability to edit reminders: including changing text, day, time & colour.
 - [ ] Update state to ensure calendar supports more than one month? 
