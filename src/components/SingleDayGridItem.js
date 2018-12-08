@@ -40,22 +40,24 @@ class SingleDayGridItem extends Component {
     this.props.onClickHandler(this.props.dayNumber)
   }
 
-  deleteReminderHandler = (e, id) => {
+  deleteReminderHandler = (e, day, id) => {
     e.stopPropagation();
-    this.props.onDeleteReminder(id)
+    this.props.onDeleteReminder(day, id)
   }
 
   render() {
+    const { dayNumber } = this.props;
+    const dayNumberWithLeadingZero = String(dayNumber).length > 1 ? dayNumber : `0${dayNumber}`
     return (
       <SingleDayGridItemStyles onClick={this.onClickHandler}>
-        {this.props.dayNumber}
+        {dayNumberWithLeadingZero}
         {this.props.reminders
           .sort((a, b) => convertTimeStringToNumber(a.time) - convertTimeStringToNumber(b.time))
           .map(reminder => (
         <SingleReminderStyles key={reminder.id} reminderColor={reminder.color}>
           <div>
             <span>{reminder.details}</span>
-            <span className="close-icon" onClick={(e) => this.deleteReminderHandler(e, reminder.id)}>x</span>
+            <span className="close-icon" onClick={(e) => this.deleteReminderHandler(e, dayNumberWithLeadingZero, reminder.id)}>x</span>
           </div>
           <p className="reminder-time">{reminder.time}</p>
         </SingleReminderStyles>))}
